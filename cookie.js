@@ -18,8 +18,8 @@ function getCookies(cname) {
         while (c.charAt(0) === ' ') {
             // 1/infinity space takle ta while loop kore bad deya hoyche
             // while space bad diye baki tuku return korbe 
-            return c.substring(1)
-        }
+            c = c.substring(1)
+        }  // c= name=muhammad sa
         if (c.indexOf(name) === 0) {
             //return  muahmmad sa
             return c.substring(name.length)
@@ -31,12 +31,16 @@ function getCookies(cname) {
 function checkCookie(name) {
     const cookie = getCookies(name)
     if (cookie != '') {
-        const givenName = prompt('Please enter your name', '')
-        if (givenName != "" && givenName != null) {
-            setCookies('companyName', givenName, 3)
+        alert(cookie)
+    }
+    else {
+        const givenName = prompt('Please enter your company anme', '')
+        if (givenName != null && givenName != "") {
+            setCookies(name, givenName, 3)
         }
         else {
-            return alert('Cant')
+            alert('Cant create the cookie')
         }
     }
+
 }
